@@ -68,7 +68,7 @@ function HtmAddBlock() {
     Ziyad.addBlock(new Block(data));
     HtmBlock();
     addDiv.innerHTML = '<button type="button" onclick="getData()">+</button>';
-    document.getElementById("AcceptChange").innerHTML = '<h2>هل تقبل بإضافة "'+data+'"؟</h2><button type="button" id="ADbutton" onclick="Accept()">Accept</button><button type="button" id="ADbutton" onclick="Decline()">Decline</button>'
+    document.getElementById("AcceptChange").innerHTML = '<h2>هل تقبل بإضافة "'+data+'"؟</h2><button type="button" id="ADbutton" onclick="Accept()">✓</button><button type="button" id="ADbutton" onclick="Decline()">✖</button>'
 }
 
 function Accept() {
@@ -88,3 +88,4 @@ console.log("Is blockchain valid?", Ziyad.isChainValid());
 HtmBlock();
 
 console.log(JSON.stringify(Ziyad, null, 4));
+
