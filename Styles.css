@@ -1,0 +1,46 @@
+html{
+    background-image: linear-gradient(45deg, #152614, #1E441E);
+}
+
+body{
+    font-family: "El Messiri";
+    color: #EAE2B7;
+    font-size: 90%;
+}
+
+#logo{
+    float: Right;
+}
+
+#Im{
+    font-size: 120%;
+    padding-right: 10%;
+}
+
+#DataBlock{
+    border: black 5px solid;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    display: inline;
+    float: right;
+    margin: 1%;
+}
+
+#AddBlock{
+    display: inline;
+    float: right;
+    align-items: center;
+    margin-top: 11.5%;
+    margin-right: 2%;
+}
+
+button{
+    border: #EAE2B7 2px solid;
+    background-color: rgba(0, 0, 0, 0);
+    color: #EAE2B7;
+}
+
+#ADbutton {
+    margin: 5%;
+}
