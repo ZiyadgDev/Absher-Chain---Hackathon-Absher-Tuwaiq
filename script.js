@@ -30,27 +30,41 @@ class BlockChain{
         newBlock.hash = newBlock.calculateHash();
         this.chain.push(newBlock);
     }
-
+    
     isChainValid() {
         for (let i = 1; i < this.chain.length; i++){
             const currentBlock = this.chain[i];
             const previousBlock = this.chain[i - 1];
 
             if (currentBlock.hash !== currentBlock.calculateHash()) {
-                currentBlock.data = "تم أكتشاف تلعب!";
                 return false;
             }
 
             if (currentBlock.previousHash !== previousBlock.hash) {
-                currentBlock.data = "تم أكتشاف تلعب!";
                 return false;
             }
         }
         return true;
     }
+
+    updateInvalidData() {
+        for (let i = 1; i < this.chain.length; i++){
+            const currentBlock = this.chain[i];
+            const previousBlock = this.chain[i - 1];
+
+            if (currentBlock.hash !== currentBlock.calculateHash()) {
+                currentBlock.data = "تم أكتشاف تلعب!";
+            }
+
+            if (currentBlock.previousHash !== previousBlock.hash) {
+                currentBlock.data = "تم أكتشاف تلعب!";
+            }
+        }
+    }
 }
 
 function HtmBlock() {
+    Ziyad.updateInvalidData();
     document.getElementById("Chain").innerHTML = "";
     for (let i = 1;  i < Ziyad.chain.length; i++) {
         const newDiv = document.createElement("div");
