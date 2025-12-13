@@ -25,6 +25,7 @@ class BlockChain{
     }
 
     addBlock(newBlock){
+        this.isChainValid();
         newBlock.previousHash = this.getLatestBlock().hash;
         newBlock.hash = newBlock.calculateHash();
         this.chain.push(newBlock);
@@ -36,10 +37,12 @@ class BlockChain{
             const previousBlock = this.chain[i - 1];
 
             if (currentBlock.hash !== currentBlock.calculateHash()) {
+                currentBlock.data = "تم أكتشاف تلعب!";
                 return false;
             }
 
             if (currentBlock.previousHash !== previousBlock.hash) {
+                currentBlock.data = "تم أكتشاف تلعب!";
                 return false;
             }
         }
@@ -74,6 +77,7 @@ function HtmAddBlock() {
 function Accept() {
     document.getElementById("AcceptChange").innerHTML = "";
     console.log(JSON.stringify(Ziyad, null, 4));
+    console.log("Is blockchain valid?", Ziyad.isChainValid());
 }
 
 function Decline() {
