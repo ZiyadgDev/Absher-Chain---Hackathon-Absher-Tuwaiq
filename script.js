@@ -73,6 +73,7 @@ function HtmAddBlock() {
 
 function Accept() {
     document.getElementById("AcceptChange").innerHTML = "";
+    console.log(JSON.stringify(Ziyad, null, 4));
 }
 
 function Decline() {
@@ -86,6 +87,3 @@ Ziyad.addBlock(new Block("(الأسم: زياد يوسف) (الهويه: 1123456
 console.log("Is blockchain valid?", Ziyad.isChainValid());
 
 HtmBlock();
-
-console.log(JSON.stringify(Ziyad, null, 4));
-
